@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### if bug to deploy to netlify
+
+For those deploying on gh-pages and having trouble with react-router (aka nothing shows up except for Nav and background color):
+
+Assuming you did the standard setup for deploying on gh-pages on package.json (https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
+
+Go to index.js, and on BrowserRouter add this prop basename={process.env.PUBLIC_URL}
+
+npm run deploy again, give it some time and that should fix the issue.
