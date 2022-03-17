@@ -1,12 +1,14 @@
-# Utilisation dans ce projet des lib styled-component et framer-motion
+# Utilisation dans ce projet des lib styled-component, framer-motion et react-intersection-observer
 
 Deux lib qui fonctionnent bien ensemble, styled-component utilisée pour styliser et framer-motion pour animer des éléments.
+
+React-intersection-observer utilisée pour lancer un event quand l'utilisateur arrive à un point précis de la page. Go component UseScroll ligne 26/28. On peut le combiner avec framer-motion pour lancer une animation à un moment précis du scroll.
 
 ## Framer-motion est utilisé pour réaliser des animations d'éléments
 
 Framer-motion nécessite :
 
-- Création des animations en css qui nous intéressent (fichier animation pour le détail)
+- Création des animations en object/css qui nous intéressent (fichier animation pour le détail)
 - Indiquer quel élément sera animé en précisant "motion." devant ce dernier, soit dans le jsx soit lors de la création du styled-component
 - Indiquer les différentes options dans l'élément en jsx (variants, animate, hidden, initial..)
 
@@ -21,6 +23,7 @@ import {
 
 const OurWork = () => {
 
+  // Go component UseScroll pour plus de détails. Ici on va avoir deux events pour le scroll car ils sont posés sur deux éléments distincts
   const [ element, controls ] = UseScroll()
   const [ element2, controls2 ] = UseScroll()
 
